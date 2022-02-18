@@ -1,6 +1,7 @@
 package ru.picma.rtapp.controller;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +12,7 @@ import ru.picma.rtapp.service.ComplimentService;
 import java.util.List;
 
 @RestController
-@RequestMapping("compliment")
+@RequestMapping
 public class ComplimentController {
 
     private ComplimentService complimentService;
@@ -20,7 +21,7 @@ public class ComplimentController {
         this.complimentService = complimentService;
     }
 
-    @GetMapping
+    @GetMapping("compliment")
     public ResponseEntity<List<String>> getAll() {
         return new ResponseEntity<List<String>>(complimentService.getAll(), HttpStatus.OK);
     }
