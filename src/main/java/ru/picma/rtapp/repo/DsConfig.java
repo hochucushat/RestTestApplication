@@ -14,9 +14,9 @@ public final class DsConfig {
 
     public DsConfig() {
         this.ds = new HikariDataSource();
-        ds.setJdbcUrl("jdbc:postgresql://localhost:5432/postgres");
-        ds.setUsername("postgres");
-        ds.setPassword("popa");
+        ds.setJdbcUrl("jdbc:postgresql://rtapp_pg:5432/rtapp_db");
+        ds.setUsername("root");
+        ds.setPassword("root");
         ds.addDataSourceProperty("cachePrepStmts", "true");
         ds.addDataSourceProperty("prepStmtCacheSize", "250");
         ds.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
