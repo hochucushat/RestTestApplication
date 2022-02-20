@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  db_rtapp:
+  db:
     image: postgres:14.2
     container_name: rtapp_pg
     ports:
@@ -15,8 +15,13 @@ services:
       - POSTGRES_DB=rtapp_db
       - PGDATA=/var/lib/postgresql/data/pgdata
 
-  app_rtapp:
+  app:
     build: ./
     container_name: rtapp_app
     ports:
       - 4321:4321
+
+networks:
+  default:
+    external:
+      name: mr
